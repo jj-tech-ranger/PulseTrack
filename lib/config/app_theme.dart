@@ -3,18 +3,15 @@ import 'package:google_fonts/google_fonts.dart';
 
 class AppTheme {
   // Colors based on fitness app design
-  static const Color primaryGreen = Color(0xFF92E3A9);
-  static const Color darkGreen = Color(0xFF2D4A3E);
-  static const Color accentOrange = Color(0xFFFFA726);
-  static const Color backgroundColor = Color(0xFF1A1A1A);
-  static const Color cardColor = Color(0xFF2C2C2C);
-  static const Color textPrimary = Color(0xFFFFFFFF);
+  static const Color primaryNavy = Color(0xFF1E3A8A); // Navy Blue  static const Color darkGreen = Color(0xFF2D4A3E);
+  static const Color darkNavy = Color(0xFF0F172A); // Dark Navy  static const Color backgroundColor = Color(0xFF1A1A1A);
+  static const Color accentPastel = Color(0xFFBAE6FD); // Pastel Blue  static const Color textPrimary = Color(0xFFFFFFFF);
   static const Color textSecondary = Color(0xFFB0B0B0);
 
   static ThemeData get darkTheme {
     return ThemeData(
       brightness: Brightness.dark,
-      primaryColor: primaryGreen,
+      primaryColor: primaryNavy,
       scaffoldBackgroundColor: backgroundColor,
       
       textTheme: GoogleFonts.poppinsTextTheme(
@@ -40,8 +37,8 @@ class AppTheme {
       
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-          backgroundColor: primaryGreen,
-          foregroundColor: darkGreen,
+          backgroundColor: primaryNavy,
+          foregroundColor: darkNavy,
           padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 32),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
