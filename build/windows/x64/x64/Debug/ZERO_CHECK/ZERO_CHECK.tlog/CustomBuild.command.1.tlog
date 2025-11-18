@@ -1,0 +1,10 @@
+^C:\USERS\RANGER\STUDIOPROJECTS\PULSETRACK\BUILD\WINDOWS\X64\CMAKEFILES\75F06E2543DF75976AEB3C344F60B7CF\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/Ranger/StudioProjects/PulseTrack/windows -BC:/Users/Ranger/StudioProjects/PulseTrack/build/windows/x64 --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/Ranger/StudioProjects/PulseTrack/build/windows/x64/pulsetrack.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

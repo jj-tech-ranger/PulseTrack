@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/PulseTrack.iml" filepath="$PROJECT_DIR$/PulseTrack.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android/pulsetrack_android.iml" filepath="$PROJECT_DIR$/android/pulsetrack_android.iml" />
     </modules>
   </component>
 </project>

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pulsetrack/screens/auth/signup_screen.dart';
 import '../../services/api_service.dart';
 import '../../config/constants.dart';
 
@@ -146,7 +147,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     const Text("Don't have an account? "),
                     TextButton(
                       onPressed: () {
-                        // TODO: Navigate to signup
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => const SignupScreen()));
                       },
                       child: const Text('Sign Up'),
                     ),

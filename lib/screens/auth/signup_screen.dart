@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:pulse_track/services/api_service.dart';
-import 'package:pulse_track/config/constants.dart';
+import 'package:pulsetrack/services/api_service.dart';
+import 'package:pulsetrack/config/constants.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
@@ -15,7 +15,6 @@ class _SignupScreenState extends State<SignupScreen> {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
   final _confirmPasswordController = TextEditingController();
-  final _apiService = ApiService();
   bool _obscurePassword = true;
   bool _obscureConfirmPassword = true;
   bool _isLoading = false;
@@ -36,10 +35,10 @@ class _SignupScreenState extends State<SignupScreen> {
       });
 
       try {
-        final response = await _apiService.signup(
-          email: _emailController.text,
-          password: _passwordController.text,
-          name: _nameController.text,
+        final response = await ApiService.signup(
+          _nameController.text,
+          _emailController.text,
+          _passwordController.text,
         );
 
         if (mounted) {
@@ -51,7 +50,7 @@ class _SignupScreenState extends State<SignupScreen> {
             ScaffoldMessenger.of(context).showSnackBar(
               const SnackBar(content: Text('Signup successful! Please login.')),
             );
-            Navigator.pushReplacementNamed(context, AppRoutes.login);
+            Navigator.pushReplacementNamed(context, AppConstants.loginRoute);
           } else {
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(content: Text(response['message'] ?? 'Signup failed')),
@@ -81,7 +80,7 @@ class _SignupScreenState extends State<SignupScreen> {
             end: Alignment.bottomRight,
             colors: [
               Theme.of(context).colorScheme.surface,
-              Theme.of(context).primaryColor.withOpacity(0.1),
+              Theme.of(context).primaryColor.withAlpha(25),
             ],
           ),
         ),
@@ -100,7 +99,7 @@ class _SignupScreenState extends State<SignupScreen> {
                       height: 100,
                       width: 100,
                       decoration: BoxDecoration(
-                        color: Theme.of(context).primaryColor.withOpacity(0.2),
+                        color: Theme.of(context).primaryColor.withAlpha(51),
                         shape: BoxShape.circle,
                       ),
                       child: Icon(
@@ -270,7 +269,7 @@ class _SignupScreenState extends State<SignupScreen> {
                         const Text('Already have an account? '),
                         TextButton(
                           onPressed: () {
-                            Navigator.pushReplacementNamed(context, AppRoutes.login);
+                            Navigator.pushReplacementNamed(context, AppConstants.loginRoute);
                           },
                           child: Text(
                             'Login',
